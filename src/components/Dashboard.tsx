@@ -40,16 +40,11 @@ export function Dashboard({
   onAddRecipe,
 }: DashboardProps) {
   
-  // NOTE: We create a shallow copy ([...recipes]) before sorting to avoid modifying 
-  // the original 'recipes' prop, ensuring clean data flow.
-  /**
-   * Calculates the top 5 most cooked recipes.
-   */
+   // NOTE: We create a shallow copy ([...recipes]) before sorting to avoid modifying the original 'recipes' prop, ensuring clean data flow.
+   // Calculates the top 5 most cooked recipes.
   const mostCooked = [...recipes].sort((a, b) => b.cookCount - a.cookCount).slice(0, 5);
   
-  /**
-   * Calculates the top 5 most viewed recipes.
-   */
+   // Calculates the top 5 most viewed recipes.
   const mostViewed = [...recipes].sort((a, b) => b.viewCount - a.viewCount).slice(0, 5);
 
   return (
